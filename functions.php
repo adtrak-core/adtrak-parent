@@ -70,6 +70,10 @@ add_filter('wp_title', function () {
 
 	$name = get_bloginfo('name');
 	$description = get_bloginfo('description');
+	
+	if($post === NULL){
+		return $name;
+	}
 
 	if (is_front_page() || is_home()) {
 		if ($description) {
